@@ -1,0 +1,45 @@
+{
+  "name": "member-wx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "server": "node server.js",
+    "start": "webpack-dev-server --open"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "antd-mobile": "^1.6.11",
+    "babel-plugin-import": "^1.6.0",
+    "dva": "^2.0.3",
+    "express": "^4.16.1",
+    "history": "^4.7.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-dva-hmr": "^0.3.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "clean-webpack-plugin": "^0.1.17",
+    "css-loader": "^0.28.7",
+    "html-webpack-plugin": "^2.30.1",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.5",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "redbox-react": "^1.5.0",
+    "style-loader": "^0.18.2",
+    "svg-sprite-loader": "^0.3.1",
+    "webpack": "^3.6.0",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-dev-server": "^2.9.1"
+  }
+}

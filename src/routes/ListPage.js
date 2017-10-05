@@ -1,9 +1,11 @@
 import React from 'react';
+
 import MainLayout from '../components/MainLayout/MainLayout';
+import ListComponent from '../components/List';
 
 const ListPage = ({ history }) => (
   <MainLayout history={history}>
-    <h3>列表页</h3>
+    <ListComponent />
   </MainLayout>
 );
 

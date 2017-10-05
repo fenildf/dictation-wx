@@ -31,6 +31,7 @@ module.exports = {
         options: {
           plugins: [
             ['dva-hmr'],
+            ['add-module-exports'],
             ['transform-runtime'],
             ['import', { style: 'css', libraryName: 'antd-mobile' }]
           ],

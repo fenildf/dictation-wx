@@ -1,12 +1,12 @@
 import React from 'react';
-import { WingBlank } from 'antd-mobile';
+
 import Header from './Header';
 import Footer from './Footer';
 
 const MainLayout = ({ history, children }) => (
   <div>
     <Header />
-    <WingBlank>{children}</WingBlank>
+    {children}
     <Footer history={history} />
   </div>
 );

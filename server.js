@@ -10,4 +10,4 @@ app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath
 }));
 
-app.listen(3000, () => console.log('app listening on port 3000!\n'));
+app.listen(8080, () => console.log('app listening on port 8080!\n'));

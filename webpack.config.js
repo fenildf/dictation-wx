@@ -1,12 +1,15 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: {
+    vendor: ['react', 'react-dom', 'dva'],
     app: './src/index.js'
   },
-  devtool: 'inline-source-map',
+  //devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist'
   },
@@ -15,7 +18,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'wx app',
       template: './src/index.ejs'
-    })
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor'
+    }), 
+    new UglifyJSPlugin()
   ],
   output: {
     filename: '[name].bundle.js',

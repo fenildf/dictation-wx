@@ -11,7 +11,9 @@ const RecordPage = ({ history }) => (
     <WhiteSpace />
     <Button icon={require('../assets/svg/voice.svg')} onClick={() => window.wx.stopRecord({
       success: (res) => {
-        alert(res.localId);
+        window.wx.playVoice({
+          localId: res.localId,
+        });
       }
     })}>
       停止录音

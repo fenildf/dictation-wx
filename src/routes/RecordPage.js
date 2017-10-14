@@ -5,8 +5,16 @@ import { Icon, Button, WhiteSpace  } from 'antd-mobile';
 const RecordPage = ({ history }) => (
   <MainLayout history={history}>
     <WhiteSpace />
-    <Button icon={require('../assets/svg/voice.svg')}>
+    <Button icon={require('../assets/svg/voice.svg')} onClick={() => window.wx.startRecord()}>
       长按录音
+    </Button>
+    <WhiteSpace />
+    <Button icon={require('../assets/svg/voice.svg')} onClick={() => window.wx.stopRecord({
+      success: (res) => {
+        alert(res.localId);
+      }
+    })}>
+      停止录音
     </Button>
   </MainLayout>
 );

@@ -1,34 +1,44 @@
 import React from 'react';
 import MainLayout from '../components/MainLayout/MainLayout';
-import { Icon, Button, WhiteSpace  } from 'antd-mobile';
+import { Icon, Button, WhiteSpace, Grid  } from 'antd-mobile';
 
 let localId;
 
-const RecordPage = ({ history }) => (
-  <MainLayout history={history}>
-    <WhiteSpace />
-    <Button icon={require('../assets/svg/voice.svg')} onClick={() => window.wx.startRecord()}>
-      开始
-    </Button>
-    <WhiteSpace />
-    <Button icon={require('../assets/svg/voice.svg')} onClick={() => window.wx.stopRecord({
+const data = [{
+  icon: <Icon type={require('../assets/svg/voice.svg')} />,
+  text: '开始',
+  onClick() {
+    window.wx.startRecord();
+  },
+}, {
+  icon: <Icon type={require('../assets/svg/play.svg')} />,
+  text: '播放',
+  onClick() {
+    window.wx.stopRecord({
       success(res) {
         localId = res.localId
       },
-    })}>
-      停止
-    </Button>
-    <Button icon={require('../assets/svg/voice.svg')} onClick={() => window.wx.playVoice({ localId })}>
-      播放
-    </Button>
-    <Button icon={require('../assets/svg/voice.svg')} onClick={() => window.wx.uploadVoice({
+    });
+    window.wx.playVoice({ localId });
+  },
+}, {
+  icon: <Icon type={require('../assets/svg/save.svg')} />,
+  text: '保存',
+  onClick() {
+    window.wx.uploadVoice({
       localId,
       success(res) {
         alert(res.serverId);
       },
-    })}>
-      上传
-    </Button>
+    });
+  },
+}];
+
+const RecordPage = ({ history }) => (
+  <MainLayout history={history}>
+    <WhiteSpace />
+    <Grid data={data} columnNum={3} onClick={_el => _el.onClick ? _el.onClick() : ''} />
+    <WhiteSpace />
   </MainLayout>
 );
 

@@ -1,9 +1,6 @@
 import React from 'react';
-import dva, { connect } from 'dva';
 import dynamic from 'dva/dynamic'
 import { Route, Switch, Router } from 'dva/router';
-
-const app = dva();
 
 const Routers = ({ history, app }) => {
   const routes = [{

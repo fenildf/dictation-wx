@@ -6,7 +6,7 @@ const data = [{
   pathname: '/',
   icon: require('../../assets/svg/account.svg'),
 }, {
-  title: '录音',
+  title: '录制',
   pathname: '/record',
   icon: require('../../assets/svg/voice.svg'),
 }, {

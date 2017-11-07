@@ -8,6 +8,7 @@ const Routers = ({ history, app }) => {
     component: () => import('./routes/IndexPage'),
   }, {
     path: '/record',
+    models: () => [import('./models/record')],
     component: () => import('./routes/RecordPage'),
   }, {
     path: '/list',

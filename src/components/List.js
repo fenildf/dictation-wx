@@ -1,6 +1,14 @@
 import React from 'react';
 import { connect } from 'dva';
-import { Card, WhiteSpace, Icon, RefreshControl, ListView, SwipeAction, Tag } from 'antd-mobile';
+import {
+  Card,
+  WhiteSpace,
+  Icon,
+  RefreshControl,
+  ListView,
+  SwipeAction,
+  Tag,
+} from 'antd-mobile';
 
 const renderRow = (rowData, sectionID, rowID) => (
   <SwipeAction
@@ -64,6 +72,7 @@ const ListComponent = ({ history, list }) => (
 );
 
 export default connect((state) => {
+  console.log('==============', state);
   return {
     list: state.list.voices,
   };

@@ -1,7 +1,9 @@
 import React from 'react';
 import { NavBar, Icon, Popover } from 'antd-mobile';
 
-const Header = () => (
+const Item = Popover.Item;
+
+const Header = ({ dispatch }) => (
   <div>
     <NavBar
       leftContent="返回"
@@ -10,29 +12,41 @@ const Header = () => (
         <Popover mask
           overlayClassName="fortest"
           overlayStyle={{ color: 'currentColor' }}
+          onSelect={(opt) => { console.log(opt.props); }}
           overlay={[
-            (<Popover.Item key="6" value="button ct">
-              <span style={{ marginRight: 5 }}>版本号 v-0.1-base</span>
-            </Popover.Item>),
+            (
+              <Item key="5"
+                icon={<Icon type={require('../../assets/svg/add.svg')} />}
+              >
+                录制
+              </Item>
+            ), (
+              <Item key="6">
+                <span style={{ marginRight: 5 }}>v-0.1-base</span>
+              </Item>
+            ),
           ]}
           align={{
             overflow: { adjustY: 0, adjustX: 0 },
             offset: [-10, 15],
           }}
         >
-          <div style={{
-            height: '100%',
-            padding: '0 0.3rem',
-            marginRight: '-0.3rem',
-            display: 'flex',
-            alignItems: 'center',
-          }}
+          <div
+            style={{
+              height: '100%',
+              padding: '0 0.3rem',
+              marginRight: '-0.3rem',
+              display: 'flex',
+              alignItems: 'center',
+            }}
           >
             <Icon type="ellipsis" />
           </div>
         </Popover>
       }
-    >dictation-wx</NavBar>
+    >
+      dictation-wx
+    </NavBar>
   </div>
 );
 

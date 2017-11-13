@@ -24,7 +24,7 @@ const Record = ({ dispatch, localId, recording }) => {
           window.wx.startRecord();
         },
       }]}
-      columnNum={3}
+      columnNum={4}
       onClick={_el => _el.onClick ? _el.onClick() : ''}
     />
   );
@@ -74,15 +74,6 @@ const Record = ({ dispatch, localId, recording }) => {
         footer={[{
           text: '完成',
           onPress: () => {
-            /*
-            dispatch({
-              type: 'record/stopRecord',
-              payload: {
-                recording: false,
-                localId: 'abc',
-              },
-            });
-            */
             window.wx.stopRecord({
               success(res) {
                 dispatch({
